@@ -1,11 +1,12 @@
-import {NextUIProvider} from "@nextui-org/react";
-import HomePage from "./HomePage";
+import Navbar from "./Components/Navbar/Navbar"
 
-function App() {
+const App = () => {
   return (
-    <NextUIProvider>
-      <HomePage />
-    </NextUIProvider>
-  );
+    <>
+    <Navbar/>
+    
+    </>
+  )
 }
-export default App;
+
+export default App
