@@ -1,9 +1,9 @@
-const CreatePost = ({ btnname }: { btnname: String }) => {
+const Button = ({ btnName }: { btnName: string }) => {
   return (
     <>
-      <button className="btn btn-outline btn-success">{btnname}</button>
+      <button className="btn btn-outline btn-success">{btnName}</button>
     </>
   );
 };
 
-export default CreatePost;
+export default Button;
