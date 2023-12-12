@@ -1,7 +1,6 @@
 ## Included Components
 -> 
-1.Search
-2.Notification
-3.User
-4.CreatePost
+1.Notification
+2.User
+3.CreatePost
 

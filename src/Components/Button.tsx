@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Button = ({ btnName }: { btnName: string }) => {
   return (
     <>
-      <button className="btn btn-outline btn-success">{btnName}</button>
+      <Link to={"/post"} className="btn btn-outline btn-success">{btnName}</Link>
     </>
   );
 };

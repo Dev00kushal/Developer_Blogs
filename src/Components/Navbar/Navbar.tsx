@@ -3,7 +3,7 @@ import Button from "../Button";
 import Search from "./Search";
 import User from "./User";
 
-const Navbar = ({ btnName }: { btnName: String }) => {
+const Navbar = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
