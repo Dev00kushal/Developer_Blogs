@@ -1,5 +1,7 @@
+import PostContextProvider from "./PostContext";
+
 const CreatePost = () => {
-  return <div>createPost</div>;
+  return <PostContextProvider>Hello</PostContextProvider>;
 };
 
 export default CreatePost;
