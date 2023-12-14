@@ -1,14 +1,6 @@
 import { createContext, useState } from "react";
 
-export interface PostContextType {
-  post: string[];
-  addPost: () => void;
-  onImageChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  imgSrc: string;
-  setPost: React.Dispatch<React.SetStateAction<string[]>>;
-}
-
-const PostContext = createContext<PostContextType | null>(null);
+export const PostContext = createContext(null);
 
 const PostContextProvider = ({ children }) => {
   const [post, setPost] = useState([]);
@@ -33,13 +25,7 @@ const PostContextProvider = ({ children }) => {
       reader.readAsDataURL(file);
     }
   };
-  const value = {
-    post,
-    addPost,
-    onImageChange,
-    imgSrc,
-    setPost,
-  };
+  const value = { post, addPost, onImageChange, imgSrc, setPost };
   return <PostContext.Provider value={value}>{children}</PostContext.Provider>;
 };
 

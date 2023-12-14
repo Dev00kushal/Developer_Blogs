@@ -14,15 +14,16 @@ const CreatePost = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="bg-white flex flex-col justify-center items-center h-screen"
+        className="bg-white flex justify-start p-5 h-screen scale-75"
       >
-        <div className="p-16 w-auto h-96  rounded-md shadow-lg  bg-gray-100 flex-col space-y-10">
-          <ImageUpload />
-          <input
-            type="text"
+        <div className="p-32w-auto h-96  flex-col space-y-10">
+          <div className=" ml-auto">
+            <ImageUpload />
+          </div>
+          <textarea
             placeholder="New Post Title Here..."
-            className="bg-gray-100 text-black w-full max-w-xs focus:border-none outline-none 
-   font-bold px-4 text-2xl"
+            className="bg-white text-black max-full resize-none outline-none font-bold px-4 text-4xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-lgxl h-full"
+            style={{ overflow: "hidden" }}
           />
         </div>
       </motion.div>

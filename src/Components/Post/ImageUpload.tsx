@@ -1,16 +1,33 @@
 import { useContext } from "react";
-import PostContext,{PostContextType} from "./PostContext";
-import PostContextProvider from "./PostContext";
+import { PostContext } from "./PostContext";
+import ".././../index.css"; 
 const ImageUpload = () => {
-  const {onImageChange} = useContext<PostContextType |null>(PostContext);
-  return (
-    <input
-      accept=".jpg, .jpeg"
-      type="file"
-      className="file-input file-input-bordered file-input-accent w-full max-w-xs ml-3"
-      onChange={onImageChange}
-    />
+  const { onImageChange, imgSrc } = useContext(PostContext);
 
+  return (
+    <div className="max-w-md mx-auto mt-3">
+      <label className="block mb-2 text-lg font-semibold text-gray-700">
+        {!imgSrc && (
+          <input
+            type="file"
+            name="image"
+            accept=".png,.jpg,.jpeg"
+            onChange={onImageChange}
+            className="mt-1 p-2 border rounded-md"
+          />
+        )}
+      </label>
+
+      {imgSrc && (
+        <div className="mt-4">
+          <img
+            src={imgSrc}
+            alt="Uploaded"
+            className="h-90 w-full object-cover rounded-md "
+          />
+        </div>
+      )}
+    </div>
   );
 };
 
