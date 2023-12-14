@@ -3,6 +3,7 @@ import ImageUpload from "./ImageUpload";
 import PostContextProvider from "./PostContext";
 
 const CreatePost = () => {
+  // need to add a scrolling bar when the div is active
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -14,15 +15,16 @@ const CreatePost = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="bg-white flex justify-start p-5 h-screen scale-75"
+        className="bg-white flex justify-start p-5 h-screen scale-75 overflow-auto rounded-xl"
       >
-        <div className="p-32w-auto h-96  flex-col space-y-10">
+        <div className="flex-col space-y-10 w-full">
           <div className=" ml-auto">
             <ImageUpload />
           </div>
           <textarea
+            autoComplete="off"
             placeholder="New Post Title Here..."
-            className="bg-white text-black max-full resize-none outline-none font-bold px-4 text-4xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-lgxl h-full"
+            className="bg-white text-black outline-none w-full font-semibold  lg:text-4xl  h-full"
             style={{ overflow: "hidden" }}
           />
         </div>
