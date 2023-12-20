@@ -5,6 +5,7 @@ export const PostContext = createContext(null);
 const PostContextProvider = ({ children }) => {
   const [post, setPost] = useState([]);
   const [imgSrc, setImgSrc] = useState("");
+  const [files, setFile] = useState([]);
   const [input, setInput] = useState("");
   const addPost = () => {
     if (input.length > 0) {
@@ -12,9 +13,9 @@ const PostContextProvider = ({ children }) => {
       setInput("");
     }
   };
+
   const onImageChange = (e) => {
     const file = e.target.files[0];
- console.log(file)
     if (file) {
       const reader = new FileReader();
 
@@ -24,8 +25,24 @@ const PostContextProvider = ({ children }) => {
 
       reader.readAsDataURL(file);
     }
+    setFile(file);
   };
-  const value = { post, addPost, onImageChange, imgSrc, setPost };
+  const cancelOnChange = () => {
+    setImgSrc("");
+    setFile(null);
+  };
+  const onImageChangeAgain = () => {
+    
+  };
+  const value = {
+    post,
+    addPost,
+    onImageChange,
+    onImageChangeAgain,
+    imgSrc,
+    setPost,
+    cancelOnChange,
+  };
   return <PostContext.Provider value={value}>{children}</PostContext.Provider>;
 };
 

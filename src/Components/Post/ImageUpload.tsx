@@ -3,7 +3,7 @@ import { PostContext } from "./PostContext";
 import ".././../index.css";
 import Button from "../Button";
 const ImageUpload = () => {
-  const { onImageChange, imgSrc } = useContext(PostContext);
+  const { onImageChange, imgSrc,onImageChangeAgain,cancelOnChange } = useContext(PostContext);
 
   return (
     <div className="max-w-md mx-auto mt-3">
@@ -18,11 +18,11 @@ const ImageUpload = () => {
           />
         ) : (
           <div className="flex space-x-5 justify-center ">
-            <Button btnName="Cancel" styler="error" onclick={""} />
+            <Button btnName="Cancel" styler="error" onclick={cancelOnChange} />
             <Button
               btnName="Change"
               styler="success"
-              onclick={""}
+              onclick={onImageChangeAgain}
             />
           </div>
         )}
