@@ -5,7 +5,7 @@ export const PostContext = createContext(null);
 const PostContextProvider = ({ children }) => {
   const [post, setPost] = useState([]);
   const [imgSrc, setImgSrc] = useState("");
-  const [files, setFile] = useState([]);
+  const [, setFile] = useState([]);
   const [input, setInput] = useState("");
   const addPost = () => {
     if (input.length > 0) {
