@@ -9,14 +9,14 @@ const Button = ({
   btnName: string;
   styler: string;
   route?: string;
-  onclick: any;
+  onclick?: any;
 }) => {
   return (
     <>
       <Link
         onClick={onclick}
         to={route}
-        className={`btn btn-outline btn-${styler}`}
+        className={styler}
       >
         {btnName}
       </Link>
