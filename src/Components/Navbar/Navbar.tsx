@@ -18,7 +18,7 @@ const Navbar = () => {
             <Search />
           </motion.div>
           <motion.div>
-            <Button btnName={"Create post"} />
+            <Button onclick={""} styler=""  route="/post" btnName={"Create post"} />
           </motion.div>
           <motion.div>
             <User />

@@ -3,7 +3,8 @@ import { PostContext } from "./PostContext";
 import ".././../index.css";
 import Button from "../Button";
 const ImageUpload = () => {
-  const { onImageChange, imgSrc,onImageChangeAgain,cancelOnChange } = useContext(PostContext);
+  const { onImageChange, imgSrc, onImageChangeAgain, cancelOnChange } =
+    useContext(PostContext);
 
   return (
     <div className="max-w-md mx-auto mt-3">
