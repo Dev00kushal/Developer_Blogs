@@ -14,4 +14,10 @@ body{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Add more styles as needed */
+.timeline-item-color-change {
+  transition: background-color 0.5s ease;
+}
+
+.timeline-item-color-change:hover {
+  background-color: red; 
+}
