@@ -4,34 +4,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const useHomeGsap = () => {
   gsap.registerPlugin(ScrollTrigger);
-  
+
   useEffect(() => {
     const colorTimeline = gsap.timeline({ repeat: -1, yoyo: true });
 
     colorTimeline.to(".mockup-browser", {
-      boxShadow: "0 0 10px rgba(255, 0, 0, 0.8)",
-      scrollTrigger: {
-        trigger: ".mockup-browser",
-        start: "top 80%",
-        end: "top 50%",
-        toggleActions: "play none none none",
-      },
+      boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)",
     });
 
-    const itemTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top center",
-        toggleActions: "play reverse play reverse",
-      },
+    colorTimeline.to(".mockup-browser", {
+      boxShadow: "0 0 10px rgba(0, 255, 0, 0.8)",
+    });
+
+    colorTimeline.to(".mockup-browser", {
+      boxShadow: "0 0 10px rgba(0, 0, 255, 0.8)",
     });
 
     const timelineItems = document.querySelectorAll(".timeline li");
+
     timelineItems.forEach((item, index) => {
       item.classList.add(`timeline-item-${index}`);
-    });
 
-    timelineItems.forEach((_, index) => {
       const colorChangeTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: `.timeline-item-${index}`,
@@ -45,26 +38,26 @@ const useHomeGsap = () => {
         color: "black",
       });
 
+      const itemTimeline = gsap.timeline();
+
       itemTimeline.from(
         `.timeline-item-${index} div.timeline-middle`,
         { opacity: 0, y: 20, duration: 0.5 },
-        index * 0.2
       );
       itemTimeline.from(
         `.timeline-item-${index} div.timeline-start, .timeline-item-${index} div.timeline-end`,
         { opacity: 0, y: 20, duration: 0.5 },
-        index * 0.2
       );
       itemTimeline.from(
         `.timeline-item-${index} div.mb-10`,
         { opacity: 0, y: 20, duration: 0.5 },
-        index * 0.2
       );
       itemTimeline.from(
         `.timeline-item-${index} hr`,
         { scaleX: 0, transformOrigin: "left center", duration: 0.5 },
-        index * 0.2
       );
+
+      colorChangeTimeline.add(itemTimeline);
     });
 
     gsap.from(".phone-1", {

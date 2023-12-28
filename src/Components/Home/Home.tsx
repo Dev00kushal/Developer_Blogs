@@ -26,13 +26,13 @@ const Home = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
-              <h1 className="text-5xl font-bold">Hello there</h1>
-              <p className="text-2xl">
+              <h1 className="text-5xl font-bold mb-8">Hello there</h1>
+              <p className="text-2xl mb-8">
                 Created a blogging platform for my side project and practice.
                 Welcome all to explore and engage! It's a space where thoughts
-                find a home. Join in the conversation and share your ideas. A
+                find a home. <br /> Join in the conversation and share your ideas. A
                 platform crafted for both learning and expression. Dive into the
-                world of blogging I've built for us.
+                world of blogging.
               </p>
               <Button
                 btnName="Get started"
@@ -61,12 +61,13 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-start md:text-end ">
-              <time className="font-mono italic">1984</time>
-              <div className="text-lg font-black">Why to write blogs?</div>
-              Writing blogs allows programmers to share their knowledge and
-              expertise with others in the community. By documenting their
-              experiences, insights, and solutions to problems, programmers can
-              help others learn and grow in their own programming journey.
+              <div className="text-lg font-black">
+                Introduction to Blogging:
+              </div>
+              Welcome to our blog space, a platform where ideas come to life.
+              Blogs are more than words on a screen; they're a canvas for
+              expressing thoughts, sharing experiences, and fostering a
+              community of like-minded individuals.
             </div>
             <hr />
           </li>
@@ -87,12 +88,12 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-end ">
-              <time className="font-mono italic">1998</time>
-              <div className="text-lg font-black">iMac</div>
-              iMac is a family of all-in-one Mac desktop computers designed and
-              built by Apple Inc. It has been the primary part of Apple's
-              consumer desktop offerings since its debut in August 1998, and has
-              evolved through seven distinct forms
+              <div className="text-lg font-black">The Coder's Perspective </div>
+              In the coding world, blogging is a powerful tool. It goes beyond
+              writing code; it's about sharing knowledge, insights, and
+              problem-solving approaches. By documenting experiences, coders
+              contribute to the collective learning and growth of the
+              programming community.
             </div>
             <hr />
           </li>
@@ -113,15 +114,12 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-start md:text-end ">
-              <time className="font-mono italic">2001</time>
-              <div className="text-lg font-black">iPod</div>
-              The iPod is a discontinued series of portable media players and
-              multi-purpose mobile devices designed and marketed by Apple Inc.
-              The first version was released on October 23, 2001, about 8+1⁄2
-              months after the Macintosh version of iTunes was released. Apple
-              sold an estimated 450 million iPod products as of 2022. Apple
-              discontinued the iPod product line on May 10, 2022. At over 20
-              years, the iPod brand is the oldest to be discontinued by Apple
+              <div className="text-lg font-black">
+                Crafting the Blogging Experience
+              </div>
+              Our blog has evolved to offer a seamless and enriching experience.
+              Join us on a visual journey through our blog's interface, designed
+              for an immersive reading experience.
             </div>
             <hr />
           </li>
@@ -142,15 +140,12 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-end ">
-              <time className="font-mono italic">2007</time>
-              <div className="text-lg font-black">iPhone</div>
-              iPhone is a line of smartphones produced by Apple Inc. that use
-              Apple's own iOS mobile operating system. The first-generation
-              iPhone was announced by then-Apple CEO Steve Jobs on January 9,
-              2007. Since then, Apple has annually released new iPhone models
-              and iOS updates. As of November 1, 2018, more than 2.2 billion
-              iPhones had been sold. As of 2022, the iPhone accounts for 15.6%
-              of global smartphone market share
+              <div className="text-lg font-black">The Art of Sharing</div>
+              Our blog captures and shares moments. It's a space where
+              narratives unfold, secrets are shared, and experiences are
+              immortalized. Join us in exploring the diverse tapestry of
+              stories, gossips, and experiences contributed by individuals from
+              various walks of life.
             </div>
             <hr />
           </li>
@@ -171,15 +166,18 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-start md:text-end ">
-              <time className="font-mono italic">2015</time>
-              <div className="text-lg font-black">Apple Watch</div>
-              The Apple Watch is a line of smartwatches produced by Apple Inc.
-              It incorporates fitness tracking, health-oriented capabilities,
-              and wireless telecommunication, and integrates with iOS and other
-              Apple products and services
+              <div className="text-lg font-black">
+                Engage with Dynamic Content
+              </div>
+              Our blog adapts and evolves with each post. It's not just static
+              content; it's a dynamic space where you can explore various
+              topics. From coding techniques to the latest industry trends, our
+              blog offers a spectrum of engaging content.
             </div>
+            <hr />
           </li>
         </ul>
+
       </div>
       <div className="flex items-center">
         <div className="mockup-phone border-primary ml-10 scale-100">
@@ -201,11 +199,7 @@ const Home = () => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-            >
-              <p className="text-5xl text-center scale-90 font-bold text-white">
-                Start Exploring ..
-              </p>
-            </div>
+            ></div>
           </div>
         </div>
         <div className="ml-5">
@@ -226,4 +220,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;  
