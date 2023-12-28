@@ -11,7 +11,7 @@ const Navbar = () => {
       exit={{ opacity: 0, y: -20 }}
       className="navbar-container mt-5  space-x-8 "
     >
-      <div className="flex items-center px-3 justify-between   ">
+      <div className="flex items-center px-3 justify-between">
         <Name />
         <div className="flex items-center space-x-6">
           <motion.div>

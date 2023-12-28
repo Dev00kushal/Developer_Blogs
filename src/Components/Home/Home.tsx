@@ -1,157 +1,9 @@
-import _, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 import Button from "../Button";
-
-gsap.registerPlugin(ScrollTrigger);
-
+import useHomeGsap from "../Utils/Home.gsap";
 const Home = () => {
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const animateElement = (
-      element: string,
-      options: { opacity?: number; toggleActions?: string }
-    ) => {
-      gsap.from(element, {
-        opacity: options.opacity || 0,
-        y: 50,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          end: "top 50%",
-          toggleActions: options.toggleActions || "play none none reverse",
-        },
-      });
-    };
-
-    gsap.from(".hero-content p", {
-      opacity: 0,
-      y: 30,
-      scrollTrigger: {
-        trigger: ".hero-content p",
-        start: "top 80%",
-        end: "top 50%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    animateElement(".hero-content", { opacity: 1 });
-    animateElement(".section", { opacity: 1 });
-
-    gsap.from(".btn-error, .contentall", {
-      opacity: 0,
-      y: 30,
-      scrollTrigger: {
-        trigger: ".btn-error",
-        start: "top 90%",
-        end: "top 50%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    gsap.set(".mockup-browser", { opacity: 0 });
-
-    gsap.to(".mockup-browser", {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".mockup-browser",
-        start: "top 90%",
-        end: "top 50%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    const colorTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-
-    colorTimeline.to(".mockup-browser", {
-      boxShadow: "0 0 10px rgba(255, 0, 0, 0.8)",
-      scrollTrigger: {
-        trigger: ".mockup-browser",
-        start: "top 80%",
-        end: "top 50%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    colorTimeline.to(".mockup-browser", {
-      boxShadow: "0 0 10px rgba(0, 255, 0, 0.8)",
-    });
-
-    colorTimeline.to(".mockup-browser", {
-      boxShadow: "0 0 10px rgba(0, 0, 255, 0.8)",
-    });
-
-    ScrollTrigger.create({
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      pin: ".hero-content",
-      pinSpacing: false,
-    });
-
-    const itemTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top center",
-        toggleActions: "play reverse play reverse",
-      },
-    });
-
-    const timelineItems = document.querySelectorAll(".timeline li");
-    timelineItems.forEach((item, index) => {
-      item.classList.add(`timeline-item-${index}`);
-    });
-
-    // Add animations for each list item
-    timelineItems.forEach((_, index) => {
-      const colorChangeTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: `.timeline-item-${index}`,
-          start: "top center",
-          toggleActions: "play reverse play reverse",
-        },
-      });
-
-      colorChangeTimeline.to(`.timeline-item-${index}`, {
-        backgroundColor: "green", // Change this to the color you prefer
-      });
-      itemTimeline.from(
-        `.timeline-item-${index} div.timeline-middle`,
-        { opacity: 0, y: 20, duration: 0.5 },
-        index * 0.2
-      );
-      itemTimeline.from(
-        `.timeline-item-${index} div.timeline-start, .timeline-item-${index} div.timeline-end`,
-        { opacity: 0, y: 20, duration: 0.5 },
-        index * 0.2
-      );
-      itemTimeline.from(
-        `.timeline-item-${index} div.mb-10`,
-        { opacity: 0, y: 20, duration: 0.5 },
-        index * 0.2
-      );
-      itemTimeline.from(
-        `.timeline-item-${index} hr`,
-        { scaleX: 0, transformOrigin: "left center", duration: 0.5 },
-        index * 0.2
-      );
-    });
-
-    gsap.from(".phone-1", {
-      opacity: 0,
-      y: 50,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: ".artboard-demo.phone-1",
-        start: "top 50%",
-        end: "top 50%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  }, []);
-
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useHomeGsap();
   return (
     <div data-scroll-container ref={scrollRef}>
       <div className="mockup-browser border bg-base-300 scale-75 mb-10">
@@ -174,8 +26,8 @@ const Home = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
-              <h1 className="mb-5 text-7xl font-bold">Hello there</h1>
-              <p className="mb-5 text-2xl">
+              <h1 className="text-5xl font-bold">Hello there</h1>
+              <p className="text-2xl">
                 Created a blogging platform for my side project and practice.
                 Welcome all to explore and engage! It's a space where thoughts
                 find a home. Join in the conversation and share your ideas. A
@@ -210,13 +62,11 @@ const Home = () => {
             </div>
             <div className="timeline-start md:text-end ">
               <time className="font-mono italic">1984</time>
-              <div className="text-lg font-black">First Macintosh computer</div>
-              The Apple Macintosh—later rebranded as the Macintosh 128K—is the
-              original Apple Macintosh personal computer. It played a pivotal
-              role in establishing desktop publishing as a general office
-              function. The motherboard, a 9 in (23 cm) CRT monitor, and a
-              floppy drive were housed in a beige case with integrated carrying
-              handle; it came with a keyboard and single-button mouse.
+              <div className="text-lg font-black">Why to write blogs?</div>
+              Writing blogs allows programmers to share their knowledge and
+              expertise with others in the community. By documenting their
+              experiences, insights, and solutions to problems, programmers can
+              help others learn and grow in their own programming journey.
             </div>
             <hr />
           </li>
