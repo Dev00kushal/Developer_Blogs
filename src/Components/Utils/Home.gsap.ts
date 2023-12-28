@@ -29,13 +29,14 @@ const useHomeGsap = () => {
         scrollTrigger: {
           trigger: `.timeline-item-${index}`,
           start: "top center",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none play none",
         },
       });
 
       colorChangeTimeline.to(`.timeline-item-${index}`, {
-        backgroundColor: "white",
-        color: "black",
+        // backgroundColor: "#801A86",
+        backgroundColor: "#1768AC",
+        color: "white",
       });
 
       const itemTimeline = gsap.timeline();

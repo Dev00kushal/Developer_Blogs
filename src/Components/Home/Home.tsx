@@ -26,14 +26,17 @@ const Home = () => {
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
-              <h1 className="text-5xl font-bold mb-8">Hello there</h1>
-              <p className="text-2xl mb-8">
-                Created a blogging platform for my side project and practice.
-                Welcome all to explore and engage! It's a space where thoughts
-                find a home. <br /> Join in the conversation and share your ideas. A
-                platform crafted for both learning and expression. Dive into the
-                world of blogging.
-              </p>
+              <h1 className="text-5xl font-bold mb-5">Hello there</h1>
+              <div className="flex">
+                <p className="text-2xl mb-5">
+                  Welcome to our blogging platform a space where thoughts find a
+                  home. Whether you're here to share your ideas or explore those
+                  of others, we invite you to join the conversation. Ready to
+                  dive in? Take the first step by creating an account. Sign up
+                  to unlock a world of learning and expression. Your journey
+                  into the blogging realm begins here.
+                </p>
+              </div>
               <Button
                 btnName="Get started"
                 styler="btn  btn-accent btn-lg"
@@ -43,7 +46,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="scale-90 mb-20">
+      <div className="scale-90 mb-20 ">
+        <h1 className="text-5xl white font-mono ">Why are we here ?</h1>
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
           <li>
             <div className="timeline-middle">
@@ -177,7 +181,6 @@ const Home = () => {
             <hr />
           </li>
         </ul>
-
       </div>
       <div className="flex items-center">
         <div className="mockup-phone border-primary ml-10 scale-100">
@@ -220,4 +223,4 @@ const Home = () => {
   );
 };
 
-export default Home;  
+export default Home;
