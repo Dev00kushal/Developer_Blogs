@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PostContext } from "./PostContext";
 import ".././../index.css";
-import Button from "../Button";
+import Button from "../Button/Button";
 const ImageUpload = () => {
   const { onImageChange, imgSrc, onImageChangeAgain, cancelOnChange } =
     useContext(PostContext);

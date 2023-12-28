@@ -9,15 +9,15 @@ const useHomeGsap = () => {
     const colorTimeline = gsap.timeline({ repeat: -1, yoyo: true });
 
     colorTimeline.to(".mockup-browser", {
-      boxShadow: "0 0 10px rgba(128, 0, 128, 0.8)",
+      boxShadow: "0 0 20px rgba(128, 0, 128, 0.8)",
     });
 
     colorTimeline.to(".mockup-browser", {
-      boxShadow: "0 0 10px rgba(0, 255, 0, 0.8)",
+      boxShadow: "0 0 20px rgba(0, 255, 0, 0.8)",
     });
 
     colorTimeline.to(".mockup-browser", {
-      boxShadow: "0 0 10px rgba(0, 0, 255, 0.8)",
+      boxShadow: "0 0 20px rgba(0, 0, 255, 0.8)",
     });
 
     const timelineItems = document.querySelectorAll(".timeline li");

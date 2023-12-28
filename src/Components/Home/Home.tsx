@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import Button from "../Button";
-import useHomeGsap from "../Utils/Home.gsap";
+
+import Button from "../Button/Button";
+import useHomeGsap from "../../Utils/Home.gsap";
 const Home = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   useHomeGsap();
@@ -8,7 +9,7 @@ const Home = () => {
     <div data-scroll-container ref={scrollRef}>
       <div className="mockup-browser border bg-base-300 scale-75 mb-10">
         <div className="mockup-browser-toolbar">
-          <div className="input">https://shittyDevBlogs.com</div>
+          <div className="input">https://DevBlogs.com</div>
         </div>
         <div
           className="hero min-h-screen"
@@ -40,7 +41,7 @@ const Home = () => {
               <Button
                 btnName="Get started"
                 styler="btn  btn-accent btn-lg"
-                route="/login"
+                route="/signup"
               />
             </div>
           </div>
@@ -65,7 +66,7 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-start md:text-end ">
-              <div className="text-lg font-black">
+              <div className="text-lg font-black underline">
                 Introduction to Blogging:
               </div>
               Welcome to our blog space, a platform where ideas come to life.
@@ -92,7 +93,9 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-end ">
-              <div className="text-lg font-black">The Coder's Perspective </div>
+              <div className="text-lg font-black underline">
+                The Coder's Perspective{" "}
+              </div>
               In the coding world, blogging is a powerful tool. It goes beyond
               writing code; it's about sharing knowledge, insights, and
               problem-solving approaches. By documenting experiences, coders
@@ -118,7 +121,7 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-start md:text-end ">
-              <div className="text-lg font-black">
+              <div className="text-lg font-black underline">
                 Crafting the Blogging Experience
               </div>
               Our blog has evolved to offer a seamless and enriching experience.
@@ -143,8 +146,8 @@ const Home = () => {
                 />
               </svg>
             </div>
-            <div className="timeline-end ">
-              <div className="text-lg font-black">The Art of Sharing</div>
+            <div className="timeline-end">
+              <div className="text-lg font-black underline">The Art of Sharing</div>
               Our blog captures and shares moments. It's a space where
               narratives unfold, secrets are shared, and experiences are
               immortalized. Join us in exploring the diverse tapestry of
@@ -170,7 +173,7 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-start md:text-end ">
-              <div className="text-lg font-black">
+              <div className="text-lg font-black underline">
                 Engage with Dynamic Content
               </div>
               Our blog adapts and evolves with each post. It's not just static

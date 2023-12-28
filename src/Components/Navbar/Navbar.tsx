@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import Button from "../Button";
+
 import Search from "./Search";
 import User from "./User";
+import Button from "../Button/Button";
 
 const Navbar = () => {
   return (
@@ -18,7 +19,11 @@ const Navbar = () => {
             <Search />
           </motion.div>
           <motion.div>
-            <Button styler="btn btn-outline"  route="/post" btnName={"Create post"} />
+            <Button
+              styler="btn btn-outline"
+              route="/post"
+              btnName={"Create post"}
+            />
           </motion.div>
           <motion.div>
             <User />
@@ -36,7 +41,7 @@ const Navbar = () => {
         whileTap={{ scale: 0.95 }}
         href="/"
       >
-        shittyDevBlogs
+        DevBlogs
       </motion.a>
     );
   }
