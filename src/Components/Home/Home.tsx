@@ -1,7 +1,7 @@
 import { useRef } from "react";
-
 import Button from "../Button/Button";
 import useHomeGsap from "../../Utils/Home.gsap";
+import {TimelineContent} from "../../Constants/Home.constants";
 const Home = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   useHomeGsap();
@@ -25,7 +25,7 @@ const Home = () => {
           }}
         >
           <div className="hero-overlay bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content">
+          <div className="hero-TimelineContent text-center text-neutral-TimelineContent">
             <div className="max-w-md">
               <h1 className="text-5xl font-bold mb-5">Hello there</h1>
               <div className="flex">
@@ -67,12 +67,9 @@ const Home = () => {
             </div>
             <div className="timeline-start md:text-end ">
               <div className="text-lg font-black underline">
-                Introduction to Blogging:
+              {TimelineContent[0].title}
               </div>
-              Welcome to our blog space, a platform where ideas come to life.
-              Blogs are more than words on a screen; they're a canvas for
-              expressing thoughts, sharing experiences, and fostering a
-              community of like-minded individuals.
+              {TimelineContent[0].description}
             </div>
             <hr />
           </li>
@@ -94,13 +91,9 @@ const Home = () => {
             </div>
             <div className="timeline-end ">
               <div className="text-lg font-black underline">
-                The Coder's Perspective{" "}
+              {TimelineContent[1].title}
               </div>
-              In the coding world, blogging is a powerful tool. It goes beyond
-              writing code; it's about sharing knowledge, insights, and
-              problem-solving approaches. By documenting experiences, coders
-              contribute to the collective learning and growth of the
-              programming community.
+              {TimelineContent[1].description}
             </div>
             <hr />
           </li>
@@ -122,11 +115,9 @@ const Home = () => {
             </div>
             <div className="timeline-start md:text-end ">
               <div className="text-lg font-black underline">
-                Crafting the Blogging Experience
+              {TimelineContent[2].title}
               </div>
-              Our blog has evolved to offer a seamless and enriching experience.
-              Join us on a visual journey through our blog's interface, designed
-              for an immersive reading experience.
+              {TimelineContent[2].description}
             </div>
             <hr />
           </li>
@@ -147,12 +138,8 @@ const Home = () => {
               </svg>
             </div>
             <div className="timeline-end">
-              <div className="text-lg font-black underline">The Art of Sharing</div>
-              Our blog captures and shares moments. It's a space where
-              narratives unfold, secrets are shared, and experiences are
-              immortalized. Join us in exploring the diverse tapestry of
-              stories, gossips, and experiences contributed by individuals from
-              various walks of life.
+              <div className="text-lg font-black underline">{TimelineContent[3].title}</div>
+              {TimelineContent[3].description}
             </div>
             <hr />
           </li>
@@ -174,12 +161,9 @@ const Home = () => {
             </div>
             <div className="timeline-start md:text-end ">
               <div className="text-lg font-black underline">
-                Engage with Dynamic Content
+              {TimelineContent[4].title}
               </div>
-              Our blog adapts and evolves with each post. It's not just static
-              content; it's a dynamic space where you can explore various
-              topics. From coding techniques to the latest industry trends, our
-              blog offers a spectrum of engaging content.
+              {TimelineContent[4].description}
             </div>
             <hr />
           </li>
