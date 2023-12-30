@@ -7,7 +7,6 @@ const useHomeGsap = () => {
 
   useEffect(() => {
     const colorTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-
     colorTimeline.to(".mockup-browser", {
       boxShadow: "0 0 20px rgba(128, 0, 128, 0.8)",
     });
@@ -19,6 +18,19 @@ const useHomeGsap = () => {
     colorTimeline.to(".mockup-browser", {
       boxShadow: "0 0 20px rgba(0, 0, 255, 0.8)",
     });
+
+
+    const techStackTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".slider",
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 0.5,
+        once: true,
+      },
+    });
+
+    techStackTimeline.from(".slide", { x: "-100%", opacity: 0, stagger: 0.2 });
 
     const timelineItems = document.querySelectorAll(".timeline li");
 
@@ -34,29 +46,31 @@ const useHomeGsap = () => {
       });
 
       colorChangeTimeline.to(`.timeline-item-${index}`, {
-        // backgroundColor: "#801A86",
         backgroundColor: "#1768AC",
         color: "white",
       });
 
       const itemTimeline = gsap.timeline();
 
-      itemTimeline.from(
-        `.timeline-item-${index} div.timeline-middle`,
-        { opacity: 0, y: 20, duration: 0.5 },
-      );
+      itemTimeline.from(`.timeline-item-${index} div.timeline-middle`, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+      });
       itemTimeline.from(
         `.timeline-item-${index} div.timeline-start, .timeline-item-${index} div.timeline-end`,
-        { opacity: 0, y: 20, duration: 0.5 },
+        { opacity: 0, y: 20, duration: 0.5 }
       );
-      itemTimeline.from(
-        `.timeline-item-${index} div.mb-10`,
-        { opacity: 0, y: 20, duration: 0.5 },
-      );
-      itemTimeline.from(
-        `.timeline-item-${index} hr`,
-        { scaleX: 0, transformOrigin: "left center", duration: 0.5 },
-      );
+      itemTimeline.from(`.timeline-item-${index} div.mb-10`, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+      });
+      itemTimeline.from(`.timeline-item-${index} hr`, {
+        scaleX: 0,
+        transformOrigin: "left center",
+        duration: 0.5,
+      });
 
       colorChangeTimeline.add(itemTimeline);
     });
