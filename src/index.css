@@ -2,8 +2,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
+body {
   font-family: "Syne Mono", monospace;
+}
+
+@media (max-width: 768px) {
+  .scale-75 {
+    transform: scale(0.75);
+  }
 }
 
 .blog-edit-section {
@@ -20,5 +26,5 @@ body{
 }
 
 .timeline-item-color-change:hover {
-  background-color: red; 
+  background-color: red;
 }

@@ -11,7 +11,7 @@ import {
 } from "react-icons/di";
 import { TbBrandTypescript } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
-import { RiNotionLine } from "react-icons/ri";
+import { RiNotionLine } from "react-icons/ri";  
 
 const TimelineItem = ({
   title,
@@ -109,8 +109,10 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="scale-90 mb-20 ">
-        <h1 className="text-3xl text-center -ml-3 white font-mono underline mb-10">Explore your Blogging Journey</h1>
+      <div className="scale-90 mb-20">
+        <h1 className="text-3xl text-center -ml-3 white font-mono underline mb-10">
+          Explore your Blogging Journey
+        </h1>
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
           {timelineItems}
         </ul>
