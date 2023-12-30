@@ -46,8 +46,9 @@ const useHomeGsap = () => {
       });
 
       colorChangeTimeline.to(`.timeline-item-${index}`, {
-        backgroundColor: "#1768AC",
-        color: "white",
+        backgroundColor: "white",
+        color: "black",
+       padding: "10px",
       });
 
       const itemTimeline = gsap.timeline();
