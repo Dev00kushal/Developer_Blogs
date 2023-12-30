@@ -1,47 +1,22 @@
-import _, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const PostContext = createContext(null);
 
 const PostContextProvider = ({ children }) => {
-  const [post, setPost] = useState([]);
-  const [imgSrc, setImgSrc] = useState("");
-  const [input, setInput] = useState(""); 
+  const [editorContent, setEditorContent] = useState(
+    "<p>This is the initial content of the editor</p>"
+  );
 
-  const addPost = () => {
-    if (input.length > 0) {
-      setPost([...post, input]);
-      setInput(""); 
-    }
-  };
-
-  const onImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = (event) => {
-        setImgSrc(event.target.result as string);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const cancelOnChange = () => {
-    setImgSrc("");
+  const handleEditorChange = (content) => {
+    console.log("Content was updated:", content);
+    setEditorContent(content);
   };
 
   const value = {
-    post,
-    addPost,
-    onImageChange,
-    imgSrc,
-    setPost,
-    setInput, 
-    cancelOnChange,
+    editorContent,
+    handleEditorChange,
   };
 
   return <PostContext.Provider value={value}>{children}</PostContext.Provider>;
 };
-
 export default PostContextProvider;
