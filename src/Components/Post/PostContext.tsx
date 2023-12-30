@@ -1,16 +1,16 @@
-import { createContext, useState } from "react";
+import _, { createContext, useState } from "react";
 
 export const PostContext = createContext(null);
 
 const PostContextProvider = ({ children }) => {
   const [post, setPost] = useState([]);
   const [imgSrc, setImgSrc] = useState("");
-  const [, setFile] = useState([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(""); 
+
   const addPost = () => {
     if (input.length > 0) {
       setPost([...post, input]);
-      setInput("");
+      setInput(""); 
     }
   };
 
@@ -25,24 +25,22 @@ const PostContextProvider = ({ children }) => {
 
       reader.readAsDataURL(file);
     }
-    setFile(file);
   };
+
   const cancelOnChange = () => {
     setImgSrc("");
-    setFile(null);
   };
-  const onImageChangeAgain = () => {
-    
-  };
+
   const value = {
     post,
     addPost,
     onImageChange,
-    onImageChangeAgain,
     imgSrc,
     setPost,
+    setInput, 
     cancelOnChange,
   };
+
   return <PostContext.Provider value={value}>{children}</PostContext.Provider>;
 };
 

@@ -1,34 +1,34 @@
-import { motion } from "framer-motion";
-import ImageUpload from "./ImageUpload";
 import PostContextProvider from "./PostContext";
-
+import { Editor } from "@tinymce/tinymce-react";
+import.meta.env.REACT_APP_TINYMCE_API_KEY
 const CreatePost = () => {
-  // need to add a scrolling bar when the div is active
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5 } },
+
+  const handleEditorChange = (content: string) => {
+    console.log("Content was updated:", content);
   };
+
 
   return (
     <PostContextProvider>
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="bg-white flex justify-start p-5 h-screen scale-75 overflow-auto rounded-xl"
-      >
-        <div className="flex-col space-y-10 w-full">
-          <div className=" ml-auto">
-            <ImageUpload />
-          </div>
-          <textarea
-            autoComplete="off"
-            placeholder="New Post Title Here..."
-            className="bg-white text-black outline-none w-full font-semibold  lg:text-4xl  h-full"
-            style={{ overflow: "hidden" }}
-          />
-        </div>
-      </motion.div>
+    
+        <Editor
+          apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
+          initialValue="<p>This is the initial content of the editor</p>"
+          init={{
+            height: 500,
+            menubar: false,
+            plugins: [
+              "advlist autolink lists link image charmap print preview anchor",
+              "searchreplace visualblocks code fullscreen",
+              "insertdatetime media table paste code help wordcount",
+            ],
+            toolbar:
+              "undo redo | formatselect | bold italic backcolor | \
+              alignleft aligncenter alignright alignjustify | \
+              bullist numlist outdent indent | removeformat | help",
+          }}
+          onEditorChange={handleEditorChange}
+        />
     </PostContextProvider>
   );
 };
