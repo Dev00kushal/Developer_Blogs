@@ -1,7 +1,17 @@
-import { useRef } from "react";
+import _, { useRef } from "react";
 import Button from "../Button/Button";
-import useHomeGsap from "../../Utils/Home.gsap";
+import useHomeGsap from "../../Hooks/Home.gsap";
 import { TimelineContent } from "../../Constants/Home.constants";
+import "../../index.css";
+import {
+  DiWindows,
+  DiNpm,
+  DiGithubBadge,
+  DiVisualstudio,
+} from "react-icons/di";
+import { TbBrandTypescript } from "react-icons/tb";
+import { GrReactjs } from "react-icons/gr";
+import { RiNotionLine } from "react-icons/ri";
 
 const TimelineItem = ({
   title,
@@ -28,7 +38,7 @@ const TimelineItem = ({
       </svg>
     </div>
     <div className={`timeline-${isStart ? "start" : "end"}`}>
-      <div className="text-lg font-black underline">{title}</div>
+      <div className="text-lg font-black">{title}</div>
       {description}
     </div>
     <hr />
@@ -41,6 +51,20 @@ const Home = () => {
 
   const backgroundImageUrl = "../public/mock.gif";
   const writingGifUrl = "../public/writing.gif";
+
+  const timelineItems = TimelineContent.map((content, index) => (
+    <TimelineItem key={index} {...content} isStart={index % 2 === 0} />
+  ));
+
+  const techIcons = [
+    <GrReactjs key="react" size={50} />,
+    <RiNotionLine key="notion" size={50} />,
+    <TbBrandTypescript key="typescript" size={50} />,
+    <DiWindows key="windows" size={50} />,
+    <DiNpm key="npm" size={50} />,
+    <DiGithubBadge key="github" size={50} />,
+    <DiVisualstudio key="visualstudio" size={50} />,
+  ];
 
   return (
     <div data-scroll-container ref={scrollRef}>
@@ -67,11 +91,11 @@ const Home = () => {
               <h1 className="text-5xl font-bold mb-5">Hello there</h1>
               <div className="flex">
                 <p className="text-2xl mb-5">
-                  Welcome to our blogging platform a space where thoughts find a
-                  home. Whether you're here to share your ideas or explore those
-                  of others, we invite you to join the conversation. Ready to
-                  dive in? Take the first step by creating an account. Sign up
-                  to unlock a world of learning and expression. Your journey
+                  Welcome to our blogging platform, a space where thoughts find
+                  a home. Whether you're here to share your ideas or explore
+                  those of others, we invite you to join the conversation. Ready
+                  to dive in? Take the first step by creating an account. Sign
+                  up to unlock a world of learning and expression. Your journey
                   into the blogging realm begins here.
                 </p>
               </div>
@@ -84,19 +108,27 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <div className="scale-90 mb-20 ">
-        <h1 className="text-5xl white font-mono ">Why are we here ?</h1>
+        <h1 className="text-3xl text-center -ml-3 white font-mono underline mb-10">Explore your Blogging Journey</h1>
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-          {TimelineContent.map((content, index) => (
-            <TimelineItem
-              key={index}
-              title={content.title}
-              description={content.description}
-              isStart={index % 2 === 0}
-            />
-          ))}
+          {timelineItems}
         </ul>
       </div>
+
+      <div className="slider-container flex-col">
+        <h1 className="text-3xl font-extrabold mb-10 text-center underline">
+          Tech Stack &amp; Tools
+        </h1>
+        <div className="slider flex mb-28 ml-16">
+          {techIcons.map((tech, index) => (
+            <div className="slide flex gap-10 w-full" key={index}>
+              {tech}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="flex items-center">
         <div className="mockup-phone border-primary ml-10 scale-100">
           <div className="camera"></div>
@@ -105,6 +137,7 @@ const Home = () => {
             style={{
               backgroundImage: `url(${writingGifUrl})`,
               backgroundSize: "cover",
+              padding: "10px",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               height: "500px",
@@ -123,7 +156,7 @@ const Home = () => {
             Write your stories, Gossips, experiences!
           </h1>
           <p className="py-6 mr-20">
-            Its a platform where narratives unfold, secrets are shared, and
+            It's a platform where narratives unfold, secrets are shared, and
             experiences are immortalized. <br /> Explore the diverse tapestry of
             stories, gossips, and experiences contributed by individuals from
             various walks of life. <br /> Immerse yourself in the richness of
