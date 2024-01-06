@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 const useHomeGsap = () => {
-  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const colorTimeline = gsap.timeline({ repeat: -1, yoyo: true });
@@ -46,8 +46,9 @@ const useHomeGsap = () => {
       });
 
       colorChangeTimeline.to(`.timeline-item-${index}`, {
-        backgroundColor: "#1768AC",
-        color: "white",
+        backgroundColor: "white",
+        color: "black",
+       padding: "10px",
       });
 
       const itemTimeline = gsap.timeline();
