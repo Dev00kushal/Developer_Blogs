@@ -1,11 +1,12 @@
+import TextEditor from "./TextEditor";
 
 const Post = () => {
- 
-
   return (
-    <div>
-
-    </div>
-  )
-}
+    <>
+      <div className="scale-90">
+        <TextEditor />
+      </div>
+    </>
+  );
+};
 export default Post;
