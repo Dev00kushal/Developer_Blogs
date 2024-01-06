@@ -1,5 +1,5 @@
 import { Client, Account, ID } from "appwrite";
-import config from "../Config/config";
+import config from "../Config/envConfig";
 export class AuthService {
   private client: Client;
   public account: Account;
