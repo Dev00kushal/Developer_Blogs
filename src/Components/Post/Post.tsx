@@ -1,12 +1,11 @@
-import PostContextProvider from './PostContext'
-import { Editor } from '@tinymce/tinymce-react'
 
 const Post = () => {
+ 
+
   return (
-    <PostContextProvider>
-      <Editor/>
-    </PostContextProvider>
+    <div>
+
+    </div>
   )
 }
-
-export default Post
+export default Post;

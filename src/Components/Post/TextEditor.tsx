@@ -1,15 +1,13 @@
 import { Editor } from "@tinymce/tinymce-react";
-import { useContext } from "react";
-import { PostContext } from "./PostContext";
 
 const TextEditor = () => {
-  const { editorContent, handleEditorChange } = useContext(PostContext);
+  const handleEditorChange = (content: any) => { 
+    console.log("Content was updated:", content);
+  }
 
   return (
-  
       <Editor
-        apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
-        initialValue={editorContent}
+        apiKey={import.meta.env.VITE_TINY_API_KEY}
         init={{
           height: 500,
           menubar: false,

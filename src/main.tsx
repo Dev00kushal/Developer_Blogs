@@ -10,12 +10,12 @@ import {
 import Layout from "./Layout.tsx";
 import Error from "./Error.tsx";
 import Home from "./Components/Home/Home.tsx";
-import Post from "./Components/Post/Post.tsx";
+import TextEditor from "./Components/Post/TextEditor.tsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="/" element={<Home />} />
-      <Route path="/post" element={<Post />} />
+      <Route path="/post" element={<TextEditor/>} />
       <Route path="*" element={<Error />} />
     </Route>
   )
