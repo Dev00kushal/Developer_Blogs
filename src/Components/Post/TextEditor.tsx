@@ -1,5 +1,5 @@
 import { Editor } from "@tinymce/tinymce-react";
-
+import React from "react";
 const TextEditor = () => {
   const handleEditorChange = (content: any) => { 
     console.log("Content was updated:", content);

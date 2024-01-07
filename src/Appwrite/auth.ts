@@ -1,13 +1,20 @@
 import { Client, Account, ID } from "appwrite";
 import config from "../Config/envConfig";
 export class AuthService {
-  private client: Client;
+  public client: Client;
   public account: Account;
   constructor() {
     this.client = new Client();
-    this.client
-      .setEndpoint(config.appwriteEndpointUrl)
-      .setProject(config.appwriteProjectId);
+    this.client;
+    if (config.appwriteEndpointUrl) {
+      this.client.setEndpoint(config.appwriteEndpointUrl);
+    }
+    if (config.appwriteProjectId) {
+      this.client.setProject(config.appwriteProjectId);
+    }
+
+    this.client.setProject(config.appwriteProjectId);
+
     this.account = new Account(this.client);
   }
 
@@ -21,13 +28,13 @@ export class AuthService {
       throw error;
     }
   }
-    async logout() {
-        try {
-        await this.account.deleteSessions();
-        } catch (error) {
-        throw error;
-        }
+  async logout() {
+    try {
+      await this.account.deleteSessions();
+    } catch (error) {
+      throw error;
     }
+  }
   async getCurrentUser() {
     try {
       const user = await this.account.get();

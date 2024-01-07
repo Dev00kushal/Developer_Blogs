@@ -1,5 +1,5 @@
 import TextEditor from "./TextEditor";
-
+import React from "react";
 const Post = () => {
   return (
     <>

@@ -1,4 +1,4 @@
-import _, { useRef } from "react";
+import React, { useRef } from "react";
 import Button from "../Button/Button";
 import useHomeGsap from "../../Hooks/Home.gsap";
 import { TimelineContent } from "../../Constants/Home.constants";

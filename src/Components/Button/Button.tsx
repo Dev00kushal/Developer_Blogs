@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Button = ({
@@ -15,7 +16,7 @@ const Button = ({
     <>
       <Link
         onClick={onclick}
-        to={route}
+        to={route || ""}
         className={styler}
       >
         {btnName}

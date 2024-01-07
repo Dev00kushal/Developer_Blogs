@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import React from "react";
 import Search from "./Search";
 import User from "./User";
 import Button from "../Button/Button";
